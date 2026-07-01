@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: postgres
+    restart: always
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: Neto;1981
+      DB_NAME: storeGH
+
+    ports:
+      - "5442:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
